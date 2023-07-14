@@ -1,0 +1,102 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'selflanguagechat/chat_style.css' %}">
+<style>
+    body {
+        background-color:  #cfedf0;
+        font-family: Arial, sans-serif;
+    }
+
+    .one-box {
+        width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fffae3;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        color: black;
+        margin-bottom: 20px;
+    }
+
+    textarea.question {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #F5F5F5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: auto;
+        color: black;
+        margin-bottom: 20px;
+    }
+    textarea.result {
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #F5F5F5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: auto;
+    }
+
+    #result {
+        display: block;
+        font-size: 16px;
+        color: #666666;
+        margin-top: 10px;
+    }
+
+    input[type="submit"] {
+        background-color: #01666C;
+        color: #F5F0D7;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .back {
+        display: inline-block;
+        margin-top: 10px;
+        background-color: #01666C;
+        color: #F5F0D7;
+        text-decoration: none;
+        font-family: 'Times New Roman', Times, serif;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+    
+    .back:hover {
+        background-color:  #fffae3;
+        color: #01666C;
+    }
+
+</style>
+
+<div class="one-box">
+    <form action="chat" method="post" enctype="application/x-www-form-urlencoded">
+        {% csrf_token %}
+        <div id="file-module-0">
+            <label for="question">Question</label>
+            <textarea id="question" name="question" class="question">{{question}}</textarea>
+        </div>
+        <div>
+            <label for="result">Answer</label>
+            <textarea id="result" name="result" class="result">{{result}}</textarea>
+        </div>
+        <a href="/signlanguagetochatgpt" class="back">Back</a>
+    </form>
+</div>
