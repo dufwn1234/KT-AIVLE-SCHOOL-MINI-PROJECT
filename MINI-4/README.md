@@ -1,1 +1,2 @@
-# 서울시 생활정보 기반 대중교통 수요 분석
+# KT-AIVLE-SCHOOL-MINI-PROJECT 4차
+- KT AIVLE 1대1 문의 내용 유형 분류
